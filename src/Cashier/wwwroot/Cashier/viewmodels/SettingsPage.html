@@ -3,10 +3,10 @@
         <h3>Cashier</h3>
         <label class="control-label">Own organization</label>
         <input type="text" class="form-control" value="{{model.OwnOrganizationSearch$::input}}" placeholder="Organisation name" on-blur="clearOwnOrganizations" />
-        <ul class="products-autocomplete">
+        <ul class="cashier-autocomplete">
             <template is="dom-repeat" items="{{model.FoundOwnOrganizations}}">
                 <!-- Blur fires before click, but after mousedown -->
-                <li on-mousedown="selectOwnOrganization" class="products-autocomplete__item" item="{{item}}">{{item.Name}}</li>
+                <li on-mousedown="selectOwnOrganization" class="cashier-autocomplete__item" item="{{item}}">{{item.Name}}</li>
             </template>
         </ul>
         <div>

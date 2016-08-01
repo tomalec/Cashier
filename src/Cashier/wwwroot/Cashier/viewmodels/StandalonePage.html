@@ -17,19 +17,19 @@
     <link rel="stylesheet" href="/Cashier/css/cashier.css" />
     <link rel="stylesheet" href="/Cashier/css/standalone.css" />
 </head>
-<body class="products-body">
+<body class="cashier-body">
     <template id="root" is="dom-bind">
-        <nav class="products-top-menu">
-            <ul class="products-top-menu__list">
-                <li class="products-top-menu__list-item">
-                    <a class="products-top-menu__list-item-link" href="/cashier">Home</a>
+        <nav class="cashier-top-menu">
+            <ul class="cashier-top-menu__list">
+                <li class="cashier-top-menu__list-item">
+                    <a class="cashier-top-menu__list-item-link" href="/cashier">Home</a>
                 </li>
-                <li class="products-top-menu__list-item">
-                    <a class="products-top-menu__list-item-link" href="/cashier/settings">Settings</a>
+                <li class="cashier-top-menu__list-item">
+                    <a class="cashier-top-menu__list-item-link" href="/cashier/settings">Settings</a>
                 </li>
             </ul>
         </nav>
-        <div class="form-horizontal products-current-page">
+        <div class="form-horizontal cashier-current-page">
             <starcounter-include partial="{{model.CurrentPage}}"></starcounter-include>
         </div>
     </template>

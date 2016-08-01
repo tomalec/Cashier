@@ -1,4 +1,4 @@
-.products-body {
+.cashier-body {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 14px;
     line-height: 1.42857143;
@@ -7,12 +7,12 @@
     margin: 0px;
 }
 
-.products-top-menu {
+.cashier-top-menu {
     background-color: #F0F0F0;
     border-bottom: 1px solid #C0C0C0;
 }
 
-.products-top-menu__list {
+.cashier-top-menu__list {
     display: block;
     list-style-type: none;
     padding: 0px;
@@ -20,51 +20,51 @@
     overflow: auto;
 }
 
-.products-top-menu__list-item {
+.cashier-top-menu__list-item {
     float: left;
 }
 
-.products-top-menu__list-item-link {
+.cashier-top-menu__list-item-link {
     display: block;
     padding: 5px 20px;
     text-decoration: none;
     color: #333333;
 }
 
-.products-top-menu__list-item-link:hover {
+.cashier-top-menu__list-item-link:hover {
     background-color: #333333;
     color: white;
 }
 
-.products-current-page {
+.cashier-current-page {
     padding: 10px 15px;
 }
 
-.products-box-button {
+.cashier-box-button {
     float: left;
     margin-right: 10px;
 }
 
-.products-box-label {
+.cashier-box-label {
     float: left;
     width: 70px;
 	text-align: left;
 }
 
-.products-box-heading-label{
+.cashier-box-heading-label{
     display: block;
 }
 
-.products-box-control {
+.cashier-box-control {
     margin-left: 80px;
     width: 300px;
     margin-bottom: 15px;
 }
 
-.products-box-text {
+.cashier-box-text {
     margin: 25px 0px;
 }
 
-.products-table {
+.cashier-table {
     margin-bottom: 23px;
 }

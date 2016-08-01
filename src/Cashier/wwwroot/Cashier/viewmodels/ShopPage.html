@@ -1,27 +1,15 @@
 ﻿<template>
     <template is="dom-bind">
-        <h3>Shop: <span>{{model.CurrentShop.Name}}</span></h3>
-        <form class="form-horizontal" style="max-width:500px;">
-            <div>
-                <div class="form-group">
-                    <label class="col-sm-4 control-label">Current shop:</label>
-                    <div class="col-sm-8">
-                        <juicy-select class="form-control" caption-text="Select shop" value="{{model.ShopKey$}}" options="{{model.Shops}}" text-property="Name" value-property="Key" style="padding:0px;">
-                            <select class="form-control"></select>
-                        </juicy-select>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="col-sm-4 control-label" style="white-space:nowrap;">Sell date:</label>
-                    <div class="col-sm-8">
-                        <pikaday-decorator format="{{model.ClientDateFormat}}">
-                            <input type="text" class="form-control" value="{{model.SellDate$::change}}" placeholder="Sell date" />
-                        </pikaday-decorator>
-                    </div>
-                </div>
-            </div>
-        </form>
-        <div>
+        <h3 slot="Cashier/shop-header">Shop: <span>{{model.CurrentShop.Name}}</span></h3>
+        <label class="control-label" slot="Cashier/shop-selector-label">Current shop:</label>
+        <juicy-select slot="Cashier/shop-selector-input" class="form-control" caption-text="Select shop" value="{{model.ShopKey$}}" options="{{model.Shops}}" text-property="Name" value-property="Key" style="padding:0px;">
+            <select class="form-control"></select>
+        </juicy-select>
+        <label class="control-label" style="white-space:nowrap;" slot="Cashier/sell-date-label">Sell date:</label>
+        <pikaday-decorator format="{{model.ClientDateFormat}}" slot="Cashier/sell-date-input">
+            <input type="text" class="form-control" value="{{model.SellDate$::change}}" placeholder="Sell date" />
+        </pikaday-decorator>
+        <div slot="Cashier/sell-buttons">
             <template is="dom-repeat" items="{{model.Products}}">
                 <div class="product" title="Click on to sell 1" value="{{item.SellClick$::click}}" onclick="++this.value">
                     <span class="name">{{item.Name}}</span>
@@ -30,5 +18,48 @@
             </template>
         </div>
         <link is="puppet-redirect" history url$="{{model.RedirectUrl}}" />
+    </template>
+
+    <template is="starcounter-composition">
+        <style>
+            .form-horizontal {
+                overflow:hidden;
+                padding:10px;
+            }
+
+            .form-group .control-label {
+                float: left;
+                width: 30%;
+                text-align: right;
+                padding-right:10px;
+            }
+
+            .form-group .form-control {
+                float: left;
+                width: 60%;
+            }
+        </style>
+        <content select="[slot='Cashier/shop-header']"></content>
+        <form class="form-horizontal" style="max-width:500px;">
+            <div>
+                <div class="form-group">
+                    <div class="control-label">
+                        <content select="[slot='Cashier/shop-selector-label']"></content>
+                    </div>
+                    <div class="form-control">
+                        <content select="[slot='Cashier/shop-selector-input']"></content>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="control-label">
+                        <content select="[slot='Cashier/sell-date-label']"></content>
+                    </div>
+                    <div class="form-control">
+                        <content select="[slot='Cashier/sell-date-input']"></content>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <content select="[slot='Cashier/sell-buttons']"></content>
     </template>
 </template>
