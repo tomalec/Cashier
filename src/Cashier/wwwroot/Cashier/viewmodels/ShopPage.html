@@ -11,7 +11,7 @@
         </pikaday-decorator>
         <div slot="Cashier/sell-buttons">
             <template is="dom-repeat" items="{{model.Products}}">
-                <div class="product" title="Click on to sell 1" value="{{item.SellClick$::click}}" onclick="++this.value">
+                <div class="product" title="Click on to sell 1" on-click="sellProduct" item="{{item}}">
                     <span class="name">{{item.Name}}</span>
                     <span class="quantity">{{item.Quantity}}</span>
                 </div>
@@ -19,6 +19,18 @@
         </div>
         <link is="puppet-redirect" history url$="{{model.RedirectUrl}}" />
     </template>
+    <script>
+        (function () {
+            var script = document._currentScript || document.currentScript;
+            var template = script.previousElementSibling;
+
+            template.sellProduct = function (ev) {
+                var item = ev.currentTarget.item;
+                var index = template.model.Products.indexOf(item);
+                template.set("model.Products." + index + ".SellClick$", ++template.model.Products[index].SellClick$);
+            };
+        })();
+    </script>
 
     <template is="starcounter-composition">
         <style>
