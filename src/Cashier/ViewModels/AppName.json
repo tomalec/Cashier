@@ -1,0 +1,5 @@
+{
+    "name": "Cashier",
+    "description": "Test application for selling products",
+    "html": "/Cashier/viewmodels/AppIconPage.html"
+}

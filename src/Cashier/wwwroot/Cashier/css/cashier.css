@@ -1,0 +1,127 @@
+div.product {
+    width: 200px;
+    float: left;
+    padding: 10px;
+    margin: 10px;
+    background-color: lightgray;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+    div.product:hover span {
+        text-decoration:underline;
+    }
+
+    div.product .name {
+
+    }
+
+    div.product .quantity {
+        float:right;
+        color:green;
+        font-style:italic;
+    }
+
+.products-table {
+    margin-bottom:0px;
+}
+
+.products-autocomplete {
+    display:block;
+    background-color:white;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.37);
+    list-style-type:none;
+    padding:0px;
+    margin:2px 0px;
+    position:absolute;
+}
+
+.products-autocomplete__item {
+    padding:0px;
+}
+
+.products-nav-buttons {
+    margin: 20px 0;
+}
+
+.products-shops-box {
+    margin: 20px 0;
+    background-color: #b2b2b2;
+    border-spacing: 5px;
+    border-collapse: separate;
+}
+
+.products-shops-box__td {
+    padding: 2px 5px;
+}
+
+.products-shops-box__shop {
+    background-color: #c4c4c4;
+    color: white;
+}
+
+.products-shops-box__stock {
+    background-color: #676566;
+    color: white;
+}
+
+.products-shops-box__add-stock {
+    padding: 0;
+}
+
+.products-shops-box__add-stock-button {
+    background-color: #676566;
+    color: white;
+}
+
+.products-shops-box__triangle {
+    background-color: #c4c4c4;
+    color: white;
+    text-align: center;
+}
+
+.products-shops-box-stock {
+    margin: 20px;
+    display: inline-block;
+    text-align: center;
+}
+.products-shops-box-stock__label {
+    color: #b2b2b2;
+}
+.products-shops-box-stock__ball {
+    color: #46C627;
+    margin-right: 5px;
+}
+.products-shops-box-stock__content {
+    font-size: large;
+    font-weight: bold;
+}
+
+.products-id {
+    margin: 20px 0;
+    display: inline-block;
+}
+.products-id__label {
+    color: #b2b2b2;
+}
+.products-id__content {
+    font-size: large;
+    font-weight: bold;
+    border: none;
+}
+
+.products-name {
+    margin: 20px 0;
+    display: inline-block;
+}
+.products-name__label {
+    color: #b2b2b2;
+}
+.products-name__content {
+    font-size: large;
+    font-weight: bold;
+    border: none;
+}

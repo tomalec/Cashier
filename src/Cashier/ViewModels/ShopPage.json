@@ -1,0 +1,16 @@
+{
+    "Html": "/Cashier/viewmodels/ShopPage.html",
+    "RedirectUrl": "",
+    "SellDate$": "",
+    "ShopKey$": "",
+    "CurrentShop": { "Name": "", "Key": "" },
+    "Shops": [
+        {
+            "Key": "",
+            "Name": ""
+        }
+    ],
+    "Products": [ { "Name": "", "Quantity": 0.0, "SellClick$": 0 } ],
+    "ClientDateFormat": "DD.MM.YYYY",
+    "ServerDateFormat": "dd.MM.yyyy"
+}

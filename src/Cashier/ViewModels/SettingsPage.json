@@ -1,0 +1,13 @@
+{
+    "Html": "/Cashier/viewmodels/SettingsPage.html",
+    "Save$": 0,
+    "OwnOrganizationSearch$": "",
+    "ClearOwnOrganization$": 0,
+    "ClearOwnOrganizations$": 0,
+    "FoundOwnOrganizations": [
+        {
+            "Name": "",
+            "Select$": 0
+        }
+    ],
+}

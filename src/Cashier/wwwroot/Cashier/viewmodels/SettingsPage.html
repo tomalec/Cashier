@@ -1,0 +1,34 @@
+﻿<template>
+    <template is="dom-bind">
+        <h3>Cashier</h3>
+        <label class="control-label">Own organization</label>
+        <input type="text" class="form-control" value="{{model.OwnOrganizationSearch$::input}}" placeholder="Organisation name" on-blur="clearOwnOrganizations" />
+        <ul class="products-autocomplete">
+            <template is="dom-repeat" items="{{model.FoundOwnOrganizations}}">
+                <!-- Blur fires before click, but after mousedown -->
+                <li on-mousedown="selectOwnOrganization" class="products-autocomplete__item" item="{{item}}">{{item.Name}}</li>
+            </template>
+        </ul>
+        <div>
+            <button class="btn btn-small" value="{{model.ClearOwnOrganization$::click}}" onmousedown="++this.value;">Clear own organization</button>
+        </div>
+        <button class="btn btn-small btn-success" value="{{model.Save$::click}}" onmousedown="++this.value;">Save</button>
+    </template>
+    <script>
+        (function () {
+            var script = document._currentScript || document.currentScript;
+            var template = script.previousElementSibling;
+
+            template.clearOwnOrganizations = function () {
+                template.set("model.ClearOwnOrganizations$", ++template.model.ClearOwnOrganizations$);
+            };
+
+            template.selectOwnOrganization = function (ev) {
+                var item = ev.currentTarget.item;
+                var index = template.model.FoundOwnOrganizations.indexOf(item);
+                template.set("model.FoundOwnOrganizations." + index + ".Select$",
+                    ++template.model.FoundOwnOrganizations[index].Select$);
+            };
+        })();
+    </script>
+</template>
